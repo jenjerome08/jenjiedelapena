@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% block information %}
+<div class="task-detail">
+    <div class="infomo">
+        <img src="{{ infomo.image.url }}" />
+        <h2>{{ infomo.first_name }} {{ infomo.last_name }}</h2>
+        <h3>Submitted by {{ infomo.student.username }}</h3>
+
+        <p>{{ infomo.section }}</p>
+        <p>{{ infomo.age }}</p>
+        <p>{{ infomo.tupc_id }}</p>
+        <p>{{ infomo.gender }}</p>
+        <p>{{ infomo.image }}</p>
+    </div>
+</div>
+{% endblock %}

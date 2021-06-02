@@ -1,0 +1,17 @@
+{% extends 'base_layout.html' %}
+
+{% block information%}
+    <h1>List of Students' Info</h1>
+    <div class="infos"><br><br>
+    {% for infomo in infos %}
+        <div class="infomo">
+        	<h1>a;lwkfa;ljkwalg;kjgwla;kjg</h1>
+        	<h1>a;lwkfa;ljkwalg;kjgwla;kjg</h1>
+        	<h1>a;lwkfa;ljkwalg;kjgwla;kjg</h1>
+            <h2><a href="{% url 'articles:info_detail' slug=infomo.slugs %}">{{ infomo.subject }}</a></h2>
+
+            <p class="student">added by {{ infomo.student.username }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

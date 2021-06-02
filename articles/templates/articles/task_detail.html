@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="task-detail">
+    <div class="taskmo">
+        <img src="{{ taskmo.image.url }}" />
+        <h2>{{ taskmo.subject }}</h2>
+        <h3>Submitted by {{ taskmo.student.username }}</h3>
+
+        <p>{{ taskmo.body }}</p>
+        <p>{{ taskmo.date }}</p>
+    </div>
+</div>
+{% endblock %}

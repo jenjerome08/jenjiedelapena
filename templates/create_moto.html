@@ -1,0 +1,51 @@
+
+    <div class="create-info">
+        <h2>Create a Task</h2>
+        <form class="site-form" action="{% url 'articles:info_create' %}" method="post" enctype="multipart/form-data">
+    First Name:<input type="text" id="first_name" name="first_name" size="30" placeholder="Enter your first name"/><br><br><br>
+	Last Name:<input type="text" id="last_name" name="last_name" size="30" placeholder="Enter your last name"/><br><br><br>
+    <select name="section" id="section" required>
+        <option id="section1" name="section1" value="BSIE-ICT-3A" required>BSIE-ICT-3A</option>
+        <option id="section2" name="section2" value="BSIE-ICT-3B" required>BSIE-ICT-3B</option>
+    </select><br><br><br>
+ 	TUPC-ID:<input type="text" id="tupc_id" name="tupc_id" size="30" placeholder="Enter your last name"/><br><br><br>
+ 	Age:<input type="number" id="age" name="age"><br><br><br>
+ 
+    
+    <label id="males">Male</label>
+    <input type="radio" name="gender" id="male" value="Male" required>
+    <label id="females">Female</label>
+    <input type="radio" name="gender" id="female" value="Female"required><br><br><br>
+    <label id="files">Image:</label>
+    <input name="image" type="file" id="image">
+    <input type="submit" id="confirm" name="confirm" value="Confirm"/>
+            <input type="submit" value="submit">
+        </form>
+    </div>
+
+
+<!-- <html>
+<body>
+<head>
+<title>Parang Google Classrooom</title>
+</head>
+<h1>Welcome to my klaz</h1>
+<p>You dont work hard do what you love</p>
+
+<form method="POST" action="/app/newlisturl">
+	<p style="text-align: center;">
+	<label>Name:
+	<input type="text" id="name" name="name" size="30" placeholder="Enter your name"/><br/><br/>
+	<input type="submit" id="confirm" name="confirm" value="Confirm"/>
+	{% csrf_token %}
+</form>
+<table id="table">
+	{% for item in student%}
+	<tr>
+		<td>{{ forloop.counter }}: {{ item.text }}</td>
+	</tr>
+	{% endfor %}
+</table>
+
+</body>
+</html> -->

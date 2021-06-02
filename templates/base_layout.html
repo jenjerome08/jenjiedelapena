@@ -1,0 +1,227 @@
+
+<!DOCTYPE html>
+<html>
+ <title>Parang Google Classrooom</title>
+ 
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+.navbar{
+    position: fixed;
+    width: 100%;
+    z-index: 999;
+    padding: 17px 0;
+    background-color: rgba(0,0,0,.7);
+
+    font-family: 'Ubuntu', sans-serif;
+    transition: all 0.3s ease;
+}
+.navbar .max-width{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.navbar .logo a{
+    color: #fff;
+    font-size: 35px;
+    font-weight: 600;
+}
+.navbar .logo a span{
+    color: crimson;
+    transition: all 0.3s ease;
+}
+.navbar.sticky .logo a span{
+    color: #fff;
+}
+.navbar .menu li{
+    list-style: none;
+    display: inline-block;
+}
+.navbar .menu li a{
+    display: block;
+    color: #fff;
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 5px;
+    transition: color 0.3s ease;
+}
+.navbar .menu li a:hover{
+    color: crimson;
+}
+.navbar.sticky .menu li a:hover{
+    color: #fff;
+}
+
+
+
+.wrapper{
+    max-width: 960px;
+    margin: 0 auto;
+}
+
+
+header{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 20px 0;
+}
+
+nav{
+    justify-self: end;
+}
+
+nav li{
+    display: inline-block;
+    list-style-type: none;
+    margin-left: 20px;
+}
+
+nav button{
+    background: none;
+    color: #fff;
+    cursor: pointer;
+    border: 0;
+    font-size: 16px;
+}
+
+.tasks{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 30px;
+}
+
+.taskmo{
+    padding: 10px;
+    border: 2px solid crimson;
+    position: relative;
+    padding-bottom: 40px;
+    color: #fff;
+}
+
+.taskmo h2.{
+    font-size: 1.0em;
+    color: #fff;
+}
+
+.taskmo .student{
+    padding: 10px;
+    background: crimson;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 0;
+    color: #fff;
+}
+
+.task-detail .taskmo{
+    padding: 0;
+}
+
+.task-detail  .taskmo img{
+    max-width: 100%;
+}
+
+.task-detail  .taskmo h2{
+    text-align: center;
+    margin: 20px auto;
+    font-size: 2em
+}
+
+.task-detail .taskmo h3{
+    text-align: center;
+}
+
+.task-detail  .taskmo p{
+    margin: 10px 20px
+}
+
+.site-form {
+    margin-top: 60px;
+    border: 2px solid crimson;
+    padding: 20px;
+}
+
+.site-form input, .site-form textarea{
+    display: block;
+    margin: 20px 0 0px 0;
+    padding: 10px;
+}
+
+
+.site-form input[type="submit"]{
+    background: crimson;
+    border: 0;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 4px;
+    margin: 10px 0;
+}
+.max-width{
+    max-width: 1300px;
+    padding: 0 80px;
+    margin: auto;
+}
+.about, .services, .skills, .teams, .contact, footer{
+    font-family: 'Poppins', sans-serif;
+}
+.about .about-content, 
+.services .serv-content,
+.skills .skills-content,
+.contact .contact-content{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+}
+
+  </style>
+</head>
+
+
+    <nav class="navbar">
+        <div class="max-width">
+            <div class="logo"><a href="#">Binggo<span>.Book</span></a></div>
+            <ul class="menu">
+            	
+                <li><a href="{% url 'home' %}" class="menu-btn">Home</a></li>
+                <li><a href="{% url 'articles:create' %}" class="highlight">Gform</a></li>
+                <li><a href="{% url 'student_page' %}" class="highlight">Student's Info</a></li>
+                <li><a href="" class="highlight">Attendance</a></li>
+                <li><a href="{% url 'accounts:login' %}">Login</a></li>
+            	 <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
+            </ul>
+            
+    </nav>
+<br><br><br><br>
+    <body>
+        <header class="wrapper">
+        
+            
+                    {% if user.is_authenticated %}
+          
+                        <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                            {% csrf_token %}
+                            <button type="submit">Logout</button>
+                        </form>
+       
+                    {% else %}
+                    {% endif %}
+    
+        </header>
+        <div class="wrapper">
+            {% block content %}
+            {% endblock %}
+
+        </div>
+    </body>
+</html>

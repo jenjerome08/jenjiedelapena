@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+    <h1>List of Turn In</h1>
+    <div class="tasks"><br><br>
+    {% for taskmo in tasks %}
+        <div class="taskmo">
+            <h3><a style="color: white;" href="{% url 'articles:detail' task=taskmo.task %}">{{ taskmo.task }}</a></h3>
+
+            <p class="student">added by {{ taskmo.student.username }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}
