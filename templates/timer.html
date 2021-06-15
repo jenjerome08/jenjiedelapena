@@ -1,0 +1,66 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+
+<h1>Countdown Timer</h1>
+<form class="quiz-form" action="{% url 'articles:create' %}" method="post" enctype="multipart/form-data">
+
+        <p id="hour-label" class="label">Hours</p>
+        <p id="min-label" class="label">Minutes</p>
+        <p id="sec-label" class="label">Seconds</p>
+        <input id="hour" type="number" max="99" min="0" value="0" class="time">
+        <p id="p1" class="semicolon"></p>
+        <input id="minute" type="number" max="60" min="0" value="0" class="time">
+        <p id="p2" class="semicolon"></p>
+        <input id="sec" type="number" max="60" min="0" value="0" class="time">
+        <button id="start" class="btn">Start</button>
+        <button id="reset" class="btn">Reset</button>
+<br><br>
+   
+Q1. sino ako?<br>
+<input type="radio" name="question1" id="correct1">jenjie<br>
+<input type="radio" name="question1">blank<br>
+<input type="radio" name="question1">blank <br>
+<input type="radio" name="question1">blank <br>
+
+Q1. saan ako nakatira?<br>
+<input type="radio" name="question2" >blank <br>
+<input type="radio" name="question2">blank <br>
+<input type="radio" name="question2" id="correct2">dasma<br>
+<input type="radio" name="question2">blank <br>
+
+Q1. Sino nag tanong?<br>
+<input type="radio" name="question3" >blank <br>
+<input type="radio" name="question3"id="correct3">mamamo<br>
+<input type="radio" name="question3">blank <br>
+<input type="radio" name="question3">blank <br>
+
+<input type="submit" name="submit" value="SubmitQuiz" onClick="result()">
+  {% csrf_token %}
+</form>
+<script type="text/javascript">
+function result()
+{
+  var score=0;
+  if(document.getElementById('correct1').checked)
+    { score++;
+    }
+  if(document.getElementById('correct2').checked)
+    { score++;
+    }
+  if(document.getElementById('correct3').checked)
+    { score++;
+    }
+ alert("Your score is:"+score);
+ // to print on browser
+ // document.write("Your score is:"+score);
+}
+</script>
+
+   
+{% endblock %}
+
+
+    
+        
+

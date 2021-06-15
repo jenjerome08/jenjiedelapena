@@ -1,0 +1,33 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+<div class="task-detail">
+    <div class="taskmo">
+        <img src="{{ jenjiemo.image.url }}" />
+
+        <h2>{{ jenjiemo.subject }}</h2>
+        <h3>Information by {{ jenjiemo.first_name }} {{ jenjiemo.last_name }}</h3>
+        
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide();
+  });
+  $("#show").click(function(){
+    $("p").show();
+  });
+});
+</script>
+</head>
+<body>
+
+<p>Hi my name is {{ jenjiemo.first_name }} {{ jenjiemo.last_name }} from {{ jenjiemo.section }} and I am {{ jenjiemo.age }} years old </p>
+        <p>{{ jenjiemo.tupc_id }}</p>
+        <p>{{ jenjiemo.gender }}</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+    </div>
+</div>
+{% endblock %}

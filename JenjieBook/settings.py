@@ -11,11 +11,7 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 import os
 
-from pathlib import Path
-try:
-    from .local import *
-except ImportError:
-    print("In production")
+from pathlib import Path 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -29,7 +25,7 @@ SECRET_KEY = 'wu40fqktvn8k*v=bse11&l!0l#=b9vq249u5e0($(&q*95)*@9'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["binggo.ph"]
+ALLOWED_HOSTS = ["localhost"]
 
 
 # Application definition
@@ -122,8 +118,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+MEDIA_URL = '/images/'
+MEDIA_URL = '/js/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+    ]
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 

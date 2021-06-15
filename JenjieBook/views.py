@@ -1,10 +1,10 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-def homepage(request):
+'''def timer(request):
     # return HttpResponse('homepage')
-    return render(request, 'homepage.html')
+    return render(request, 'timer.html')
 
-def student_info(request):
+def quiz(request):
     # return HttpResponse('about')
-    return render(request, 'about.html')
+    return render(request, 'quiz.html')'''

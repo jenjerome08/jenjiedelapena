@@ -1,0 +1,75 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+  
+ <h1>Countdown Timer</h1>
+        <p id="hour-label" class="label">Hours</p>
+        <input id="hour" name="hour" type="number" max="99" min="0" value="0" class="time">
+        <p id="min-label" class="label">Minutes</p>
+        <p id="p1" class="semicolon"></p>
+        <input id="minute" name="minute" type="number" max="60" min="0" value="0" class="time">
+        <p id="sec-label" class="label">Seconds</p>
+        <p id="p2" class="semicolon"></p>
+        <input id="sec" name="sec" type="number" max="60" min="0" value="0" class="time">
+        <button id="start" class="btn">Start</button>
+        <button id="reset" class="btn">Reset</button>
+<br><br>
+<h1>{{ quizmo.title }}</h1>
+   <form class="quiz-form" action="" method="post" enctype="multipart/form-data">
+<h3>Q1. {{ quizmo.Q1 }}</h3>
+(a.)<input type="radio" name="question1" id="correct1">  {{ quizmo.a1 }}<br>
+(b.)<input type="radio" name="question1" >  {{ quizmo.b1 }}<br>
+(c.)<input type="radio" name="question1" >  {{ quizmo.c1 }}<br>
+(d.)<input type="radio" name="question1" >  {{ quizmo.d1 }}<br><br>
+
+<h3>Q2. {{ quizmo.Q2 }}</h3>
+(a.)<input type="radio" name="question2" >{{ quizmo.a2 }}<br>
+(b.)<input type="radio" name="question2" id="correct2">{{ quizmo.b2 }}<br>
+(c.)<input type="radio" name="question2" >{{ quizmo.c2 }}<br>
+(d.)<input type="radio" name="question2" >{{ quizmo.d2 }}<br><br>
+
+<h3>Q3. {{ quizmo.Q3 }}</h3>
+(a.)<input type="radio" name="question3" >{{ quizmo.a3 }}<br>
+(b.)<input type="radio" name="question3" >{{ quizmo.b3 }}<br>
+(c.)<input type="radio" name="question3" id="correct3">{{ quizmo.c3 }}<br>
+(d.)<input type="radio" name="question3">{{ quizmo.d3 }}<br><br>
+
+<h3>Q4. {{ quizmo.Q4 }}</h3>
+(a.)<input type="radio" name="question4" >{{ quizmo.a4 }}<br>
+(b.)<input type="radio" name="question4" >{{ quizmo.b4 }}<br>
+(c.)<input type="radio" name="question4" >{{ quizmo.c4 }} <br>
+(d.)<input type="radio" name="question4" id="correct4">{{ quizmo.d4 }}<br>
+
+<input type="submit" name="submit" value="SubmitQuiz" onClick="result()">
+  {% csrf_token %}
+</form>
+<script type="text/javascript">
+function result()
+{
+  var score=0;
+  if(document.getElementById('correct1').checked)
+    { score++;
+    }
+  if(document.getElementById('correct2').checked)
+    { score++;
+    }
+  if(document.getElementById('correct3').checked)
+    { score++;
+    }
+    if(document.getElementById('correct4').checked)
+    { score++;
+    }
+ alert("Your score is:"+score);
+ // to print on browser
+ // document.write("Your score is:"+score);
+}
+
+
+
+</script>
+<div class="task-detail">
+    <div class="taskmo">
+
+    </div>
+</div>
+{% endblock %}

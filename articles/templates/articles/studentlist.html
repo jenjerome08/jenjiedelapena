@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+    <h1>STUDENT INFORMATION</h1>
+    <div class="tasks"><br><br>
+    {% for jenjiemo in jenjies %}
+        <div class="taskmo">
+            <h3><a style="color: white;" href="{% url 'articles:studentdetail' section=jenjiemo.section %}">{{ jenjiemo.first_name }} {{ jenjiemo.last_name }}</a></h3>
+
+            <p class="student">added by {{ jenjiemo.student.username }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

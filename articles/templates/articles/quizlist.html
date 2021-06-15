@@ -1,0 +1,14 @@
+{% extends 'base_layout.html' %}
+
+{% block content%}
+    <h1>Quiz</h1>
+    <div class="tasks"><br><br>
+    {% for quizmo in quizes %}
+        <div class="taskmo">
+            <h3><a style="color: white;" href="{% url 'articles:quizdetail' title=quizmo.title %}">{{ quizmo.title }}</a></h3>
+
+            <p class="teacher">added by {{ quizmo.teacher.username }}</p>
+        </div>
+    {% endfor %}
+    </div>
+{% endblock %}

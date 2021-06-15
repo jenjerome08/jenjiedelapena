@@ -1,202 +1,117 @@
-
+{% load static %}
 <!DOCTYPE html>
 <html>
  <title>Parang Google Classrooom</title>
- 
-  <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+<style>
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+footer{
+    background: #111;
+    padding: 15px 23px;
+    color: #fff;
+    text-align: center;
+}
+footer span a{
+    color: crimson;
     text-decoration: none;
 }
-html{
-    scroll-behavior: smooth;
-}
+footer span a:hover{
+    text-decoration: underline;
 
-.navbar{
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-    padding: 17px 0;
-    background-color: rgba(0,0,0,.7);
-
-    font-family: 'Ubuntu', sans-serif;
-    transition: all 0.3s ease;
 }
-.navbar .max-width{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+section{
+    padding: 100px 0;
 }
-.navbar .logo a{
-    color: #fff;
-    font-size: 35px;
-    font-weight: 600;
-}
-.navbar .logo a span{
-    color: crimson;
-    transition: all 0.3s ease;
-}
-.navbar.sticky .logo a span{
-    color: #fff;
-}
-.navbar .menu li{
-    list-style: none;
-    display: inline-block;
-}
-.navbar .menu li a{
-    display: block;
-    color: #fff;
-    font-size: 18px;
-    font-weight: 500;
-    margin-left: 5px;
-    transition: color 0.3s ease;
-}
-.navbar .menu li a:hover{
-    color: crimson;
-}
-.navbar.sticky .menu li a:hover{
-    color: #fff;
-}
-
-
-
-.wrapper{
-    max-width: 960px;
-    margin: 0 auto;
-}
-
-
-header{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 20px 0;
-}
-
-nav{
-    justify-self: end;
-}
-
-nav li{
-    display: inline-block;
-    list-style-type: none;
-    margin-left: 20px;
-}
-
-nav button{
-    background: none;
-    color: #fff;
-    cursor: pointer;
-    border: 0;
-    font-size: 16px;
-}
-
-.tasks{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-gap: 30px;
-}
-
-.taskmo{
-    padding: 10px;
-    border: 2px solid crimson;
+section .title{
     position: relative;
-    padding-bottom: 40px;
-    color: #fff;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 60px;
+    padding-bottom: 20px;
+    font-family: 'Ubuntu', sans-serif;
 }
-
-.taskmo h2.{
-    font-size: 1.0em;
-    color: #fff;
-}
-
-.taskmo .student{
-    padding: 10px;
-    background: crimson;
+section .title::before{
+    content: "";
     position: absolute;
-    right: 0;
-    bottom: 0;
-    margin: 0;
-    color: #fff;
+    bottom: 0px;
+    left: 50%;
+    width: 180px;
+    height: 3px;
+    background: #111;
+    transform: translateX(-50%);
 }
-
-.task-detail .taskmo{
-    padding: 0;
-}
-
-.task-detail  .taskmo img{
-    max-width: 100%;
-}
-
-.task-detail  .taskmo h2{
-    text-align: center;
-    margin: 20px auto;
-    font-size: 2em
-}
-
-.task-detail .taskmo h3{
-    text-align: center;
-}
-
-.task-detail  .taskmo p{
-    margin: 10px 20px
-}
-
-.site-form {
-    margin-top: 60px;
-    border: 2px solid crimson;
-    padding: 20px;
-}
-
-.site-form input, .site-form textarea{
-    display: block;
-    margin: 20px 0 0px 0;
-    padding: 10px;
-}
-
-
-.site-form input[type="submit"]{
-    background: crimson;
-    border: 0;
-    color: #fff;
+section .title::after{
+    position: absolute;
+    bottom: -8px;
+    left: 50%;
     font-size: 20px;
-    border-radius: 4px;
-    margin: 10px 0;
+    color: crimson;
+    padding: 0 5px;
+    background: #fff;
+    transform: translateX(-50%);
 }
-.max-width{
-    max-width: 1300px;
-    padding: 0 80px;
-    margin: auto;
-}
-.about, .services, .skills, .teams, .contact, footer{
-    font-family: 'Poppins', sans-serif;
-}
-.about .about-content, 
-.services .serv-content,
-.skills .skills-content,
-.contact .contact-content{
+.home{
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
+    background: url("1.jpg") no-repeat center;
+    height: 100vh;
+    color: #fff;
+    min-height: 500px;
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Ubuntu', sans-serif;
+}
+.home .max-width{
+    margin: auto 0 auto 30px;
+}
+.home .home-content .text-1{
+    font-size: 27px;
+}
+.home .home-content .text-2{
+    font-size: 75px;
+    font-weight: 600;
+    margin-left: -3px;
+}
+.home .home-content .text-3{
+    font-size: 40px;
+    margin: 5px 0;
+}
+.home .home-content .text-3 span{
+    color: crimson;
+    font-weight: 500;
+}
+.home .home-content a{
+    display: inline-block;
+    background: crimson;
+    color: #fff;
+    font-size: 25px;
+    padding: 12px 36px;
+    margin-top: 20px;
+    font-weight: 400;
+    border-radius: 6px;
+    border: 2px solid crimson;
+    transition: all 0.3s ease;
+}
+.home .home-content a:hover{
+    color: crimson;
+    background: none;
 }
 
-  </style>
+</style>
 </head>
-
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/styles.css' %}">
+    <script type="text/javascript" href="{% static '/js/javascript.js' %}">"></script>
+    
 
     <nav class="navbar">
         <div class="max-width">
-            <div class="logo"><a href="#">Binggo<span>.Book</span></a></div>
+            <div class="logo"><a href="#">Parang<span>.Classroom</span></a></div>
             <ul class="menu">
-            	
                 <li><a href="{% url 'home' %}" class="menu-btn">Home</a></li>
-                <li><a href="{% url 'articles:create' %}" class="highlight">Gform</a></li>
-                <li><a href="{% url 'student_page' %}" class="highlight">Student's Info</a></li>
-                <li><a href="" class="highlight">Attendance</a></li>
+                <li><a href="{% url 'articles:create' %}" class="highlight">Task</a></li>
+                <li><a href="{% url 'attendance_page' %}" class="highlight">Attendance</a></li>
+                <li><a href="{% url 'student_page' %}" class="highlight">Student</a></li>
+                <li><a href="{% url 'quiz_page' %}" class="highlight">Quiz</a></li>
                 <li><a href="{% url 'accounts:login' %}">Login</a></li>
             	 <li><a href="{% url 'accounts:signup' %}">Signup</a></li>
             </ul>
@@ -204,6 +119,18 @@ nav button{
     </nav>
 <br><br><br><br>
     <body>
+<section class="home" id="home">
+        <div class="max-width">
+            <div class="home-content">
+                <div class="text-1">Hello, my name is</div>
+<div class="text-2">Jenjie Dela Peña</div>
+<div class="text-3">And I'm a <span class="typing"></span></div>
+<a href="#">Hire me</a>
+            </div>
+</div>
+</section>
+
+
         <header class="wrapper">
         
             
@@ -221,7 +148,136 @@ nav button{
         <div class="wrapper">
             {% block content %}
             {% endblock %}
-
         </div>
+    <footer>
+        <span>Created By <a href="#">Jenjie Pogi123</a>
+    </footer>
     </body>
+<script>
+var start = document.getElementById('start');
+var reset = document.getElementById('reset');
+
+var h = document.getElementById("hour");
+var m = document.getElementById("minute");
+var s = document.getElementById("sec");
+
+//store a reference to the startTimer variable
+var startTimer = null;
+
+start.addEventListener('click', function(){
+    //initialize the variable
+    function startInterval(){
+        startTimer = setInterval(function() {
+            timer();
+        }, 1000);
+    }
+    startInterval();
+})
+
+reset.addEventListener('click', function(){
+    h.value = 0;
+    m.value = 0;
+    s.value = 0;
+    //stop the timer after pressing "reset"
+    stopInterval()
+})
+
+function timer(){
+    if(h.value == 0 && m.value == 0 && s.value == 0){
+        h.value = 0;
+        m.value = 0;
+        s.value = 0;
+    } else if(s.value != 0){
+        s.value--;
+    } else if(m.value != 0 && s.value == 0){
+        s.value = 59;
+        m.value--;
+    } else if(h.value != 0 && m.value == 0){
+        m.value = 60;
+        h.value--;
+    }
+    return;
+}
+
+//stop the function after pressing the reset button, 
+//so the time wont go down when selecting a new time after pressing reset
+function stopInterval() {
+    clearInterval(startTimer);
+}
+
+
+$(document).ready(function(){
+    $(window).scroll(function(){
+        // sticky navbar on scroll script
+        if(this.scrollY > 20){
+            $('.navbar').addClass("sticky");
+        }else{
+            $('.navbar').removeClass("sticky");
+        }
+        
+        // scroll-up button show/hide script
+        if(this.scrollY > 500){
+            $('.scroll-up-btn').addClass("show");
+        }else{
+            $('.scroll-up-btn').removeClass("show");
+        }
+    });
+
+    // slide-up script
+    $('.scroll-up-btn').click(function(){
+        $('html').animate({scrollTop: 0});
+        // removing smooth scroll on slide-up button click
+        $('html').css("scrollBehavior", "auto");
+    });
+
+    $('.navbar .menu li a').click(function(){
+        // applying again smooth scroll on menu items click
+        $('html').css("scrollBehavior", "smooth");
+    });
+
+    // toggle menu/navbar script
+    $('.menu-btn').click(function(){
+        $('.navbar .menu').toggleClass("active");
+        $('.menu-btn i').toggleClass("active");
+    });
+
+    // typing text animation script
+    var typed = new Typed(".typing", {
+        strings: ["Students", "Educator", "Teacher",],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+
+    var typed = new Typed(".typing-2", {
+        strings: ["Students", "Educator", "Teacher"],
+        typeSpeed: 100,
+        backSpeed: 60,
+        loop: true
+    });
+
+    // owl carousel script
+    $('.carousel').owlCarousel({
+        margin: 20,
+        loop: true,
+        autoplayTimeOut: 2000,
+        autoplayHoverPause: true,
+        responsive: {
+            0:{
+                items: 1,
+                nav: false
+            },
+            600:{
+                items: 2,
+                nav: false
+            },
+            1000:{
+                items: 3,
+                nav: false
+            }
+        }
+    });
+});
+
+</script> 
 </html>
